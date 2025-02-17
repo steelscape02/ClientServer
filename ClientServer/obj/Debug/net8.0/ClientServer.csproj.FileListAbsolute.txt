@@ -1,0 +1,14 @@
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\bin\Debug\net8.0\ClientServer.exe
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\bin\Debug\net8.0\ClientServer.deps.json
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\bin\Debug\net8.0\ClientServer.runtimeconfig.json
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\bin\Debug\net8.0\ClientServer.dll
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\bin\Debug\net8.0\ClientServer.pdb
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\obj\Debug\net8.0\ClientServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\obj\Debug\net8.0\ClientServer.AssemblyInfoInputs.cache
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\obj\Debug\net8.0\ClientServer.AssemblyInfo.cs
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\obj\Debug\net8.0\ClientServer.csproj.CoreCompileInputs.cache
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\obj\Debug\net8.0\ClientServer.dll
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\obj\Debug\net8.0\refint\ClientServer.dll
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\obj\Debug\net8.0\ClientServer.pdb
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\obj\Debug\net8.0\ClientServer.genruntimeconfig.cache
+C:\Users\nicho\Documents\Programming\College\CSE310-WI25\ClientServer\ClientServer\obj\Debug\net8.0\ref\ClientServer.dll

@@ -1,0 +1,109 @@
+﻿using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+
+class ChatApp
+{
+    static void Main()
+    {
+        Console.WriteLine("Select role: 1 - Server, 2 - Client");
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            StartServer();
+        }
+        else if (choice == "2")
+        {
+            StartClient();
+        }
+        else
+        {
+            Console.WriteLine("Invalid choice. Restart the program.");
+        }
+    }
+
+    static void StartServer()
+    {
+        string localIP = GetLocalIPAddress();
+        Console.WriteLine($"Starting server... Your IP: {localIP}, Port: 5000");
+
+        TcpListener server = new TcpListener(IPAddress.Any, 5000);
+        server.Start();
+        Console.WriteLine("Server started. Waiting for client...");
+
+        TcpClient client = server.AcceptTcpClient();
+        Console.WriteLine("Client connected!");
+
+        NetworkStream stream = client.GetStream();
+        Thread receiveThread = new Thread(() => ReceiveMessages(stream, "Client"));
+        receiveThread.Start();
+
+        SendMessages(stream);
+    }
+
+    static void StartClient()
+    {
+        Console.Write("Enter Server IP: ");
+        string serverIP = Console.ReadLine();
+
+        try
+        {
+            TcpClient client = new TcpClient(serverIP, 5000);
+            Console.WriteLine("Connected to server!");
+            NetworkStream stream = client.GetStream();
+
+            Thread receiveThread = new Thread(() => ReceiveMessages(stream, "Server"));
+            receiveThread.Start();
+
+            SendMessages(stream);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Connection failed: {ex.Message}");
+        }
+    }
+
+    static void ReceiveMessages(NetworkStream stream, string sender)
+    {
+        byte[] buffer = new byte[1024];
+        while (true)
+        {
+            try
+            {
+                int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                if (bytesRead == 0) break;
+                Console.WriteLine($"{sender}: " + Encoding.UTF8.GetString(buffer, 0, bytesRead));
+            }
+            catch
+            {
+                Console.WriteLine($"{sender} disconnected.");
+                break;
+            }
+        }
+    }
+
+    static void SendMessages(NetworkStream stream)
+    {
+        while (true)
+        {
+            string message = Console.ReadLine();
+            byte[] data = Encoding.UTF8.GetBytes(message);
+            stream.Write(data, 0, data.Length);
+        }
+    }
+
+    static string GetLocalIPAddress()
+    {
+        foreach (var ip in Dns.GetHostEntry(Dns.GetHostName()).AddressList)
+        {
+            if (ip.AddressFamily == AddressFamily.InterNetwork)
+            {
+                return ip.ToString();
+            }
+        }
+        return "127.0.0.1";
+    }
+}
