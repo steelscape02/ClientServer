@@ -1,32 +1,30 @@
 # Overview
 
-This is a simple client-server network application.
+This is a simple client-server network application. Built using the C# language with NetworkStream
+and TcpClient for broadcasting, this program offers a single-file solution for simple CLI-Based
+communication.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Network Communication
 
-{Describe the architecture that you used (client/server or peer-to-peer)}
-
-{Identify if you are using TCP or UDP and what port numbers are used.}
-
-{Identify the format of messages being sent between the client and server or the messages sent between two peers.}
+This program is designed using a Client-Server model. Communication is accomplished using TCP over
+port 8888, a common TCP port for software testing that avoids conflicting with other network services.
+The messages sent between clients are unencrypted NetworkStream packets transmitted using TCP.
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+This program was developed in JetBrains Rider using the C# programming language with NetworkStream
+and TcpClient.
 
 # Useful Websites
 
 {Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [NetworkStream docs](https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.networkstream?view=net-9.0)
+* [TcpClient docs](https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient?view=net-9.0)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Add public-key encryption
+* Add file transfer capability.
+* Add a simple GUI using WinUI 3
