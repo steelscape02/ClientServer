@@ -14,7 +14,7 @@ public abstract class Program
         switch (choice)
         {
             case "1":
-                ServerSocket.StartServer(Port);
+                ClientServer.StartServer(Port);
                 break;
             case "2":
             {
@@ -25,7 +25,7 @@ public abstract class Program
                     serverIp = Console.ReadLine();
                 }
                 
-                if(serverIp != null) ClientSocket.StartClient(serverIp,Port);
+                if(serverIp != null) ClientServer.StartClient(serverIp,Port);
                 else Console.WriteLine("Invalid server ip");
                 break;
             }
