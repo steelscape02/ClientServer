@@ -4,7 +4,7 @@ This is a simple client-server network application. Built using the C# language 
 and TcpClient for broadcasting, this program offers a single-file solution for simple CLI-Based
 communication.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/40bsnjnBWtA)
 
 # Network Communication
 
@@ -19,7 +19,6 @@ and TcpClient.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [NetworkStream docs](https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.networkstream?view=net-9.0)
 * [TcpClient docs](https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient?view=net-9.0)
 

@@ -17,13 +17,7 @@ public abstract class ClientServer
             var client = new TcpClient(ip, port);
             Console.WriteLine("Connected to server!");
             var stream = client.GetStream();
-            string? name;
-            Console.WriteLine("Enter client name: ");
-            do
-            {
-                name = Console.ReadLine();
-            }while(string.IsNullOrEmpty(name));
-            var receiveThread = new Thread(() => ReceiveMessages(stream, name));
+            var receiveThread = new Thread(() => ReceiveMessages(stream, "Server"));
             receiveThread.Start();
 
             while (client.Connected)
@@ -51,7 +45,7 @@ public abstract class ClientServer
         Console.WriteLine("Client connected!");
 
         var stream = client.GetStream();
-        var receiveThread = new Thread(() => ReceiveMessages(stream, "Server"));
+        var receiveThread = new Thread(() => ReceiveMessages(stream, "Client"));
         receiveThread.Start();
 
         while (client.Connected)
@@ -92,7 +86,7 @@ public abstract class ClientServer
     {
         while (true)
         {
-            Console.Write("You (special: exit, send): ");
+            Console.Write("You ('exit' to end): ");
             var message = Console.ReadLine();
             if (string.IsNullOrEmpty(message)) continue;
 
